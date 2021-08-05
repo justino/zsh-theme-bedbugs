@@ -76,7 +76,7 @@ prompt_pwd() {
 # Virtualenv: current working virtualenv
 prompt_virtualenv() {
   local virtualenv_path="$VIRTUAL_ENV"
-  if [[ -n $virtualenv_path && -n $VIRTUAL_ENV_DISABLE_PROMPT ]]; then
+  if [[ -n $virtualenv_path && ! -v VIRTUAL_ENV_DISABLE_PROMPT ]]; then
     prompt_segment blue black "VENV: `basename $virtualenv_path`"
   fi
 }
