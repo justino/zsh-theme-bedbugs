@@ -6,6 +6,7 @@
 * Shows number of background jobs (when there are some)
 * Shows current working directory (always)
 * Shows Python Virtualenv (when there is one)
+* Shows Current AWS Profile (when there is one)
 * Shows Git status (when in a repo)
   * Working Branch
   * Dirty Tree
