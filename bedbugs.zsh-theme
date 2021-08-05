@@ -81,6 +81,12 @@ prompt_virtualenv() {
   fi
 }
 
+prompt_aws_profile() {
+  if [[ -v AWS_PROFILE && ! -v AWS_PROFILE_DISABLE_PROMPT ]]; then
+    prompt_segment magenta white "AWS: $AWS_PROFILE"
+  fi
+}
+
 # Jobs: current count of running jobs
 prompt_jobs() {
   local jobs=$(jobs -l | wc -l)
@@ -102,6 +108,7 @@ build_prompt() {
   # Start 2nd line
   print
 
+  prompt_aws_profile
   prompt_virtualenv
   prompt_git
   prompt_sigil
